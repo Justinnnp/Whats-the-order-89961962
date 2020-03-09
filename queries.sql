@@ -1,10 +1,3 @@
-
-SELECT 
-title,
-has_won_awards
-FROM series
-WHERE has_won_awards = 1;
-
 SELECT
 title,
 rating
@@ -13,38 +6,15 @@ WHERE rating > 2.5;
 
 SELECT
 title,
-country,
-language
+seasons
 FROM series
-WHERE country = 'NL' AND language = 'NL';
+WHERE seasons < 5
+ORDER BY seasons;
 
 SELECT
 title,
-seasons
+seasons,
+country
 FROM series
-WHERE seasons < 5;
-
-SELECT 
-MAX(seasons) 
-AS rating
-FROM series;
-
-SELECT
-title,
-seasons
-FROM series
-WHERE seasons < 3 OR seasons > 20;
-
-SELECT 
-title
-FROM series
-WHERE title LIKE "%th%";
-
-SELECT
-title,
-seasons
-FROM series
-WHERE seasons != 3;
-
-SELECT * FROM series;
-
+WHERE seasons < 3 OR seasons > 20
+ORDER BY country;
